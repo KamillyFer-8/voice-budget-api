@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: voice-budget-api
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        model: qwen2.5:3b
+        temperature: 0
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/voice_budget_db
+    username: postgres
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      "[hibernate.format_sql]": true
+
+voice:
+  audio:
+    whisper:
+      executable: tools/whisper/Release/whisper-cli.exe
+      model: tools/whisper/models/ggml-tiny.bin
+      language: pt
+      threads: 2
+      timeout: 90s
+
+    piper:
+      model: tools/piper/models/pt_BR-faber-medium.onnx
+      config: tools/piper/models/pt_BR-faber-medium.onnx.json

@@ -1,0 +1,39 @@
+{
+  "properties": [
+    {
+      "name": "voice.audio.whisper.executable",
+      "type": "java.nio.file.Path",
+      "description": "Caminho do executável Whisper."
+    },
+    {
+      "name": "voice.audio.whisper.model",
+      "type": "java.nio.file.Path",
+      "description": "Caminho do modelo Whisper."
+    },
+    {
+      "name": "voice.audio.whisper.language",
+      "type": "java.lang.String",
+      "description": "Idioma utilizado no reconhecimento de voz."
+    },
+    {
+      "name": "voice.audio.whisper.threads",
+      "type": "java.lang.Integer",
+      "description": "Quantidade de threads utilizadas pelo Whisper."
+    },
+    {
+      "name": "voice.audio.whisper.timeout",
+      "type": "java.time.Duration",
+      "description": "Tempo limite para o reconhecimento de voz."
+    },
+    {
+      "name": "voice.audio.piper.model",
+      "type": "java.nio.file.Path",
+      "description": "Caminho do modelo ONNX do Piper."
+    },
+    {
+      "name": "voice.audio.piper.config",
+      "type": "java.nio.file.Path",
+      "description": "Caminho da configuração JSON do modelo Piper."
+    }
+  ]
+}
